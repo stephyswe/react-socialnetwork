@@ -1,3 +1,4 @@
 {
-    "mongoURI": "mongodb+srv://admin:Appa1234@devconnector-jmhf6.mongodb.net/test?retryWrites=true"
+    "mongoURI": "mongodb+srv://admin:Appa1234@devconnector-jmhf6.mongodb.net/test?retryWrites=true",
+    "jwtToken": "mysecrettoken"
 }
