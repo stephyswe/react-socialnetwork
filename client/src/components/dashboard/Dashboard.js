@@ -37,7 +37,7 @@ const Dashboard = ({ getCurrentProfile, auth: { user }, profile: { profile, load
 };
 
 Dashboard.propTypes = {
-	GetCurrentProfile: PropTypes.func.isRequired,
+	getCurrentprofile: PropTypes.func.isRequired,
 	auth: PropTypes.object.isRequired,
 	profile: PropTypes.object.isRequired
 };
