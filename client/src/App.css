@@ -1,6 +1,6 @@
 /* Global Styles */
 :root {
-  --primary-color: linear-gradient(#8f8f8f,#686868,#7b7b7b);
+  --primary-color: linear-gradient(#8f8f8f, #686868, #7b7b7b);
   --dark-color: #76b7f9;
   --light-color: linear-gradient(to right, #cac6d4, #e9e4f0);
   --danger-color: #dc3545;
@@ -19,7 +19,7 @@ body {
   line-height: 1.6;
   background-color: #fff;
   color: #333;
-  background-image:url(https://cdn.inspirationhut.net/wp-content/uploads/2013/05/201.png);
+  background-image: url(https://cdn.inspirationhut.net/wp-content/uploads/2013/05/201.png);
 }
 
 a {
@@ -138,6 +138,7 @@ img {
   margin-right: 0.5rem;
   transition: opacity 0.2s ease-in;
   outline: none;
+  border-radius: 6px;
 }
 
 .badge {
@@ -359,7 +360,7 @@ button {
   padding: 1rem;
   line-height: 1.8;
   margin-bottom: 1rem;
-  background: linear-gradient(#8f8f8f,#686868,#656565);
+  background: linear-gradient(#8f8f8f, #686868, #656565);
   border-radius: 6px;
   -webkit-box-shadow: 2px 2px 2px #b1b1b1;
   box-shadow: 2px 2px 2px #9c9c9c;
@@ -473,7 +474,7 @@ button {
   grid-template-columns: 1fr 4fr;
   grid-gap: 2rem;
   align-items: center;
-  background: linear-gradient(#8f8f8f,#686868,#656565);
+  background: linear-gradient(#8f8f8f, #686868, #656565);
   border-radius: 6px;
   box-shadow: 2px 2px 2px #9c9c9c;
 }
@@ -486,7 +487,7 @@ button {
   width: 100px;
 }
 
-.post-text{
+.post-text {
   color: antiquewhite;
 }
 
@@ -494,7 +495,15 @@ button {
   text-shadow: 2px 2px #4a4a4a;
 }
 
-.profile-header{
+.landing-title {
+  text-shadow: 2px 2px #949494;
+}
+
+.landing-desc {
+  color: bisque;
+}
+
+.profile-header {
   text-shadow: 2px 2px #4a4a4a;
 }
 
