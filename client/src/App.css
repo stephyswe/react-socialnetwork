@@ -27,6 +27,10 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  cursor: pointer;
+}
+
 ul {
   list-style: none;
 }
@@ -312,6 +316,7 @@ button {
   top: 0;
   border-bottom: solid 1px var(--primary-color);
   opacity: 0.9;
+  background-image: linear-gradient(to top, #ff9a9e 0%, #fecfef 99%, #fecfef 100%)!important;
 }
 
 .navbar ul {
@@ -488,7 +493,8 @@ button {
 }
 
 .post-text {
-  color: antiquewhite;
+  color: #e4e4e4;
+  font-family: sans-serif;
 }
 
 .fa-check {
