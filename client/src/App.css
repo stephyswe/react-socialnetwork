@@ -1,6 +1,6 @@
 /* Global Styles */
 :root {
-  --primary-color: #17a2b8;
+  --primary-color: #e4e4e4;
   --dark-color: #343a40;
   --light-color: #f4f4f4;
   --danger-color: #dc3545;
@@ -19,6 +19,7 @@ body {
   line-height: 1.6;
   background-color: #fff;
   color: #333;
+  background-image:url(https://cdn.inspirationhut.net/wp-content/uploads/2013/05/201.png));
 }
 
 a {
@@ -358,6 +359,10 @@ button {
   padding: 1rem;
   line-height: 1.8;
   margin-bottom: 1rem;
+  background: linear-gradient(#8f8f8f,#686868,#656565);
+  border-radius: 6px;
+  -webkit-box-shadow: 2px 2px 2px #b1b1b1;
+  box-shadow: 2px 2px 2px #9c9c9c;
 }
 
 /* Profile Page */
@@ -464,6 +469,9 @@ button {
   grid-template-columns: 1fr 4fr;
   grid-gap: 2rem;
   align-items: center;
+  background: linear-gradient(#8f8f8f,#686868,#656565);
+  border-radius: 6px;
+  box-shadow: 2px 2px 2px #9c9c9c;
 }
 
 .post > div:first-child {
