@@ -1,8 +1,8 @@
 /* Global Styles */
 :root {
-  --primary-color: #e4e4e4;
+  --primary-color: linear-gradient(#8f8f8f,#686868,#7b7b7b);
   --dark-color: #343a40;
-  --light-color: #f4f4f4;
+  --light-color: linear-gradient(to right, #cac6d4, #e9e4f0);
   --danger-color: #dc3545;
   --success-color: #28a745;
 }
@@ -19,7 +19,7 @@ body {
   line-height: 1.6;
   background-color: #fff;
   color: #333;
-  background-image:url(https://cdn.inspirationhut.net/wp-content/uploads/2013/05/201.png));
+  background-image:url(https://cdn.inspirationhut.net/wp-content/uploads/2013/05/201.png);
 }
 
 a {
@@ -37,7 +37,7 @@ img {
 
 /* Utilities */
 .container {
-  max-width: 650px;
+  max-width: 950px;
   margin: auto;
   overflow: hidden;
   padding: 0 2rem;
@@ -480,6 +480,10 @@ button {
 
 .post img {
   width: 100px;
+}
+
+.post-text{
+  color: antiquewhite;
 }
 
 .post .comment-count {
