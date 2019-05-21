@@ -1,7 +1,7 @@
 /* Global Styles */
 :root {
   --primary-color: linear-gradient(#8f8f8f,#686868,#7b7b7b);
-  --dark-color: #343a40;
+  --dark-color: #76b7f9;
   --light-color: linear-gradient(to right, #cac6d4, #e9e4f0);
   --danger-color: #dc3545;
   --success-color: #28a745;
@@ -458,6 +458,10 @@ button {
   flex-basis: 20%;
 }
 
+.profile-name {
+  text-shadow: 2px 2px #ababab;
+}
+
 /* Posts Page */
 .post-form .post-form-header {
   background: var(--primary-color);
@@ -484,6 +488,14 @@ button {
 
 .post-text{
   color: antiquewhite;
+}
+
+.fa-check {
+  text-shadow: 2px 2px #4a4a4a;
+}
+
+.profile-header{
+  text-shadow: 2px 2px #4a4a4a;
 }
 
 .post .comment-count {
