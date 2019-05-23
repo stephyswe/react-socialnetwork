@@ -3,55 +3,68 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { logout } from '../../actions/auth';
+import devConnectorLogo from '../../img/logo.png';
 
 const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   const authLinks = (
-    <ul>
-      <li>
-        <Link to="/profiles">Developers</Link>
-      </li>
-      <li>
-        <Link to="/posts">Posts</Link>
-      </li>
-      <li>
+    <Fragment>
+      <Link to="/profiles" className="item">
+        Developers
+      </Link>
+      <Link to="/posts" className="item">
+        Posts
+      </Link>
+
+      <div className="right item">
         <Link to="/dashboard">
-          <i className="fas fa-user" />{' '}
           <span className="hide-sm">Dashboard</span>
         </Link>
-      </li>
-      <li>
-        <a onClick={logout} href="#!">
+        <i className="fas fa-user item" />{' '}
+        <Link to="/" onClick={logout} href="#!">
           <i className="fas fa-sign-out-alt" />{' '}
-          <span className="hide-sm">Logout</span>
-        </a>
-      </li>
-    </ul>
+          <span className="hide-sm">Log out</span>
+        </Link>
+      </div>
+    </Fragment>
   );
 
   const guestLinks = (
-    <ul>
-      <li>
-        <Link to="/profiles">Developers</Link>
-      </li>
-      <li>
-        <Link to="/register">Register</Link>
-      </li>
-      <li>
-        <Link to="/login">Login</Link>
-      </li>
-    </ul>
+    <Fragment>
+      <Link className="item" to="/profiles">
+        Developers
+      </Link>
+      <div className="right item">
+        <Link to="/login" className="ui inverted button">
+          Log in
+        </Link>
+        <Link to="/register" className="ui inverted button">
+          Sign Up
+        </Link>
+      </div>
+    </Fragment>
   );
 
   return (
-    <nav className="navbar bg-dark">
-      <h1>
-        <Link to="/">
-          <i className="fas fa-code" /> DevConnector
-        </Link>
-      </h1>
-      {!loading && (
-        <Fragment>{isAuthenticated ? authLinks : guestLinks}</Fragment>
-      )}
+    <nav className="ui inverted vertical center aligned segment">
+      <div className="ui container">
+        <div className="ui large secondary inverted pointing menu">
+          <div className="header item">
+            <img
+              className="ui small image"
+              alt="devconnector"
+              src={devConnectorLogo}
+              style={{ width: '100px' }}
+            />
+          </div>
+
+          <Link to="/" className=" item">
+            Home
+          </Link>
+          {!loading && (
+            <Fragment>{isAuthenticated ? authLinks : guestLinks}</Fragment>
+          )}
+        </div>
+      </div>
     </nav>
   );
 };

@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { useState } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -30,7 +30,7 @@ const AddEducation = ({ addEducation, history }) => {
   const onChange = e =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
   return (
-    <Fragment>
+    <div className="m-5">
       <h1 class="large text-primary">Add Your Education</h1>
       <p class="lead">
         <i class="fas fa-code-branch" /> Add any school or bootcamp that you
@@ -38,7 +38,7 @@ const AddEducation = ({ addEducation, history }) => {
       </p>
       <small>* = required field</small>
       <form
-        class="form"
+        class="ui form"
         onSubmit={e => {
           e.preventDefault();
           addEducation(formData, history);
@@ -117,12 +117,12 @@ const AddEducation = ({ addEducation, history }) => {
             onChange={e => onChange(e)}
           />
         </div>
-        <input type="submit" class="btn btn-primary my-1" />
-        <Link class="btn btn-light my-1" to="/dashboard">
+        <input type="submit" class="ui button blue" />
+        <Link class="ui button" to="/dashboard">
           Go Back
         </Link>
       </form>
-    </Fragment>
+    </div>
   );
 };
 

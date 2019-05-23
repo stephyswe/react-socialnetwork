@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { useState } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -26,48 +26,71 @@ const Login = ({ login, isAuthenticated }) => {
   }
 
   return (
-    <Fragment>
-      <h1 className="large text-primary">Sign In</h1>
-      <p className="lead">
-        <i className="fas fa-user" /> Sign Into Your Account
-      </p>
-      <form className="form" onSubmit={e => onSubmit(e)}>
-        <div className="form-group">
-          <input
-            type="email"
-            placeholder="Email Address"
-            name="email"
-            value={email}
-            onChange={e => onChange(e)}
-            required
+    <div className="ui middle aligned center aligned grid m-5">
+      <div className="six wide column">
+        <h2 className="ui blue image header">
+          <img
+            alt="login-login"
+            src="https://palrsa.palpensions.com/images/login.png"
+            className="image"
           />
-        </div>
-        <div className="form-group">
+          <div className="content">Log-in to your account</div>
+        </h2>
+        <form className="ui large form" onSubmit={e => onSubmit(e)}>
+          <div className="ui stacked segment">
+            <div className="field">
+              <div className="ui left icon input">
+                <i className="user icon" />
+                <input
+                  type="email"
+                  placeholder="Email Address"
+                  name="email"
+                  value={email}
+                  onChange={e => onChange(e)}
+                  required
+                />
+              </div>
+            </div>
+
+            <div className="field">
+              <div className="ui left icon input">
+                <i className="lock icon" />
+                <input
+                  type="password"
+                  placeholder="Password"
+                  name="password"
+                  value={password}
+                  onChange={e => onChange(e)}
+                  minLength="6"
+                />
+              </div>
+            </div>
+          </div>
           <input
-            type="password"
-            placeholder="Password"
-            name="password"
-            value={password}
-            onChange={e => onChange(e)}
-            minLength="6"
+            type="submit"
+            className="ui fluid large blue submit button"
+            value="Login"
           />
+        </form>
+        <div className="ui message">
+          <span>Don't have an account?</span>{' '}
+          <Link to="/register">Sign Up</Link>
         </div>
-        <input type="submit" className="btn btn-primary" value="Login" />
-      </form>
-      <p className="my-1">
-        Don't have an account <Link to="/register">Sign Up</Link>
-      </p>
-    </Fragment>
+      </div>
+    </div>
   );
 };
 
 Login.propTypes = {
   login: PropTypes.func.isRequired,
   isAuthenticated: PropTypes.bool,
-}
+};
 
 const mapStateToProps = state => ({
-  isAuthenticated: state.auth.isAuthenticated
+  isAuthenticated: state.auth.isAuthenticated,
 });
 
-export default connect(mapStateToProps, { login })(Login);
+export default connect(
+  mapStateToProps,
+  { login }
+)(Login);

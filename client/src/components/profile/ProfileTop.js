@@ -12,7 +12,7 @@ const ProfileTop = ({
   },
 }) => {
   return (
-    <div className="profile-top bg-primary p-2">
+    <div className="profile-top bg-primary p-2 shadow">
       <img className="round-img my-1" src={avatar} alt="" />
       <h1 className="large profile-header">{name}</h1>
       <p className="lead">

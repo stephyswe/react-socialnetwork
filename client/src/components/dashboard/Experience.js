@@ -9,7 +9,7 @@ const Experience = ({ experience, deleteExperience }) => {
     <tr key={exp._id}>
       <td>{exp.company}</td>
       <td className="hide-sm">{exp.title}</td>
-      <td>
+      <td className="right aligned">
         <Moment format="YYYY/MM/DD">{exp.from}</Moment> -{' '}
         {exp.to === null ? (
           ' Now'
@@ -17,20 +17,25 @@ const Experience = ({ experience, deleteExperience }) => {
           <Moment format="YYYY/MM/DD">{exp.to}</Moment>
         )}
       </td>
-      <td>
-        <button onClick={() => deleteExperience(exp._id)}className="btn btn-danger">Delete</button>
+      <td className="center aligned">
+        <button
+          onClick={() => deleteExperience(exp._id)}
+          className="btn btn-danger"
+        >
+          Delete
+        </button>
       </td>
     </tr>
   ));
   return (
     <Fragment>
       <h2 className="my-2">Experience Credentials</h2>
-      <table className="table">
+      <table className="ui selectable celled table">
         <thead>
           <tr>
             <th>Company</th>
             <th className="hide-sm">Title</th>
-            <th className="hide-sm">Years</th>
+            <th className="right aligned hide-sm">Years</th>
             <th />
           </tr>
         </thead>
@@ -45,4 +50,7 @@ Experience.propTypes = {
   deleteExperience: PropTypes.func.isRequired,
 };
 
-export default connect(null, { deleteExperience })(Experience);
+export default connect(
+  null,
+  { deleteExperience }
+)(Experience);

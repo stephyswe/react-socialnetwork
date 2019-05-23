@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
 import { setAlert } from '../../actions/alert';
@@ -33,11 +33,14 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
   }
 
   return (
-    <Fragment>
-      <h1 className="large text-primary">Sign Up</h1>
-      <p className="lead">
-        <i className="fas fa-user" /> Create Your Account
-      </p>
+    <div className="ui form m-5">
+      <div className="column m-3">
+        <h2 className="ui teal image header">
+         
+          <div className="content">Register your Account</div>
+        </h2>
+      </div>
+
       <form className="form" onSubmit={e => onSubmit(e)} noValidate>
         <div className="form-group">
           <input
@@ -82,12 +85,12 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
             onChange={e => onChange(e)}
           />
         </div>
-        <input type="submit" className="btn btn-primary" value="Register" />
+        <input type="submit" className="ui button" value="Register" />
       </form>
       <p className="my-1">
         Already have an account? <Link to="/login">Sign In</Link>
       </p>
-    </Fragment>
+    </div>
   );
 };
 
@@ -98,7 +101,7 @@ Register.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  isAuthenticated: state.auth.isAuthenticated
+  isAuthenticated: state.auth.isAuthenticated,
 });
 
 export default connect(

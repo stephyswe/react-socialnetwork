@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Spinner from '../layout/Spinner';
@@ -13,18 +13,18 @@ const Posts = ({ getPosts, post: { posts, loading } }) => {
   return loading ? (
     <Spinner />
   ) : (
-    <Fragment>
+    <div className="m-5">
       <h1 className="large text-primary">Posts</h1>
       <p className="lead">
-        <i className="fas fa-user" /> Welcome to the community
+        <i className="user icon" /> Welcome to the community
       </p>
-      <PostForm />
-      <div className="posts">
+      <div className="posts ui grid m-5">
         {posts.map(post => (
           <PostItem key={post._id} post={post} />
         ))}
       </div>
-    </Fragment>
+      <PostForm />
+    </div>
   );
 };
 

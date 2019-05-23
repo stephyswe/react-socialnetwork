@@ -24,8 +24,8 @@ const Profile = ({
       {profile === null || loading ? (
         <Spinner />
       ) : (
-        <Fragment>
-          <Link to="/profiles" className="btn btn-light">
+        <div className="ui container m-5">
+          <Link to="/profiles" className="ui button teal">
             Back to Profiles
           </Link>
           {auth.isAuthenticated &&
@@ -39,8 +39,8 @@ const Profile = ({
             <ProfileTop profile={profile} />
             <ProfileAbout profile={profile} />
 
-            <div className="profile-exp bg-white p-2">
-              <h2 className="text-primary">Experience</h2>
+            <div className="profile-exp bg-white p-2 shadow">
+              <h2>Experience</h2>
               {profile.experience.length > 0 ? (
                 <Fragment>
                   {profile.experience.map(experience => (
@@ -55,8 +55,8 @@ const Profile = ({
               )}
             </div>
 
-            <div className="profile-edu bg-white p-2">
-              <h2 className="text-primary">Education</h2>
+            <div className="profile-edu bg-white p-2 shadow">
+              <h2>Education</h2>
               {profile.education.length > 0 ? (
                 <Fragment>
                   {profile.education.map(education => (
@@ -71,9 +71,11 @@ const Profile = ({
               )}
             </div>
 
-            {profile.githubusername && <ProfileGithub username={profile.githubusername} />}
+            {profile.githubusername && (
+              <ProfileGithub username={profile.githubusername} />
+            )}
           </div>
-        </Fragment>
+        </div>
       )}
     </Fragment>
   );
